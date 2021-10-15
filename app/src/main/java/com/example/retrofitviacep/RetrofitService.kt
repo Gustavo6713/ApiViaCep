@@ -1,9 +1,7 @@
 package com.example.retrofitviacep
 
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface RetrofitService {
 
@@ -18,5 +16,13 @@ interface RetrofitService {
             @Path("cidade") cidade: String,
             @Path("logadouro") logadouro: String)
 
-    //@POST()
+    @POST("/ceps")
+    fun gravarCep(@Body cep: Cep) : Call<Cep> {
+
+    }
+
+    @DELETE("/ceps/{id}")
+    fun excluir(@Path("id")id: Int) {
+
+    }
 }

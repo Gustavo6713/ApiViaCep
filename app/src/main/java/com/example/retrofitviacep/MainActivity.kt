@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var textViewEndereco: TextView
     lateinit var editTextCep: EditText
 
+    lateinit var button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
