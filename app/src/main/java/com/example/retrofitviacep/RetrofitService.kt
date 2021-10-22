@@ -5,24 +5,27 @@ import retrofit2.http.*
 
 interface RetrofitService {
 
-    // Método que será responsável por chmara a api
-    // https://viacep.com.br/ws/06600025/json/
+    // Método que será responsável por
+    // Chamar a api
+    // https://viacep.com.br/ws/01001000/json/
     @GET("{CEP}/json/")
-    fun getCEP(@Path("CEP") cep: String) : Call<Cep>
+    fun getCEP(@Path("CEP") cep: String) :  Call<Cep>
 
-    @GET("{uf}/{cidade}/{logadouro}/json")
-    fun getCEPByLogadouro(
+    @GET("{uf}/{cidade}/{logradouro}/json")
+    fun getCEPByLogradouro(
             @Path("uf") uf: String,
             @Path("cidade") cidade: String,
-            @Path("logadouro") logadouro: String)
+            @Path("logradouro")logradouro: String) : Call<List<Cep>>
 
-    @POST("/ceps")
-    fun gravarCep(@Body cep: Cep) : Call<Cep> {
+//    @POST("/ceps")
+//    fun  gravarCep(@Body cep: Cep) : Call<Cep> {
+//
+//    }
+//
+//    @DELETE("/ceps/{id}")
+//    fun  excluir(@Path("id") id: Int){
+//
+//    }
 
-    }
 
-    @DELETE("/ceps/{id}")
-    fun excluir(@Path("id")id: Int) {
-
-    }
 }
